@@ -1,0 +1,4 @@
+approach,alerts,true_positives,false_positives,missed_fraud,precision_pct,recall_pct
+Existing control (>200k rule),10,10,0,2854,100.0,0.35
+Combined SQL rules (2+ hit),11983,1794,10189,1070,14.97,62.64
+XGBoost model,2903,2849,54,15,98.14,99.48

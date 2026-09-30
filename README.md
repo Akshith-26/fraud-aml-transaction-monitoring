@@ -13,7 +13,23 @@ The existing control flags only transfers above 200,000. The question: **how muc
 ## Results
 
 <!-- RESULTS_START -->
-_Run `python src/run_pipeline.py` to fill in this section with real results._
+| Metric | Value |
+|---|---|
+| Transactions analyzed | 4,169,693 |
+| Fraudulent transactions | 8,213 |
+| Fraud amount | 12,056,415,428 |
+| Existing control recall | 0.19% (16 of 8,213) |
+| Best single rule | R1 Account drain: 97.67% recall, 0.68% precision |
+| Combined rules (all 30 days) | 61.87% recall, 2.51% precision |
+| XGBoost (test days 21-30) | 99.48% recall, 98.14% precision |
+| XGBoost PR-AUC (test) | 0.999 |
+
+### Rules vs model on the test period
+| approach | alerts | true_positives | false_positives | missed_fraud | precision_pct | recall_pct |
+|---|---|---|---|---|---|---|
+| Existing control (>200k rule) | 10 | 10 | 0 | 2,854 | 100.00 | 0.35 |
+| Combined SQL rules (2+ hit) | 11,983 | 1,794 | 10,189 | 1,070 | 14.97 | 62.64 |
+| XGBoost model | 2,903 | 2,849 | 54 | 15 | 98.14 | 99.48 |
 <!-- RESULTS_END -->
 
 ![Control vs rules vs model](images/model_comparison.png)

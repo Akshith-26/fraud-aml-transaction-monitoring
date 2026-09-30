@@ -1,0 +1,10 @@
+feature,importance
+err_orig,0.5405037
+newbalanceorig,0.35723415
+oldbalanceorg,0.040372282
+amount,0.02084988
+err_dest,0.011693059
+newbalancedest,0.011532159
+is_transfer,0.007838726
+hour_of_day,0.0056029903
+oldbalancedest,0.0043729916
