@@ -1,0 +1,12 @@
+# Raw data is too large for GitHub (see data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# Python / editor
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env
+.DS_Store
