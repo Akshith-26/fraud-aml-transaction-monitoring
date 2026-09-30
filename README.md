@@ -62,25 +62,3 @@ The existing control flags only transfers above 200,000. The question: **how muc
 ## Limitations
 
 PaySim is **synthetic**. Its balance fields make fraud much easier to separate than in real bank data, so the model's scores here are far higher than a production system would achieve. Real monitoring would also use customer history, device and network data, and counterparty risk.
-
-## How to run
-
-```bash
-# macOS: run `brew install libomp` once first (needed by XGBoost), and use pip3/python3
-pip install -r requirements.txt
-# download the data first: see data/README.md
-python src/run_pipeline.py
-```
-
-Runtime: a few minutes on a normal laptop. Results appear in `outputs/`, charts in `images/`, and the Results section above updates automatically.
-
-## Project structure
-
-```text
-├── data/README.md          # how to download the dataset
-├── sql/                    # all SQL: profiling, rules, rule measurement
-├── src/run_pipeline.py     # end-to-end pipeline
-├── src/excel_utils.py      # Excel report formatting
-├── outputs/                # CSV results + Excel monitoring report
-└── images/                 # charts
-```
